@@ -10,7 +10,7 @@
 	/>
 </svelte:head>
 
-<header class="mx-auto flex w-max items-center gap-3">
+<header class="mx-auto flex items-center gap-3">
 	<img alt="Nathan Lindsay" class="h-16" src="/avataaars.svg" />
 
 	<div>
