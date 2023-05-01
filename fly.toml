@@ -1,4 +1,4 @@
-# fly.toml file generated for frosty-field-1033 on 2023-03-17T15:59:13Z
+# fly.toml file generated for frosty-field-1033 on 2023-05-01T16:56:30+01:00
 
 app = "frosty-field-1033"
 kill_signal = "SIGINT"
