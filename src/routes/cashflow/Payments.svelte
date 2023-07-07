@@ -21,7 +21,7 @@
 	};
 </script>
 
-<section class="space-y-1">
+<section class="w-full space-y-1">
 	<header class="flex items-center justify-between">
 		<h2 class="font-medium">
 			{heading}
