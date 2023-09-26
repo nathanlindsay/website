@@ -1,0 +1,9 @@
+{
+	"files.exclude": {
+		".grafbase": true,
+		"**/.svelte-kit": true,
+		"**/.turbo": true,
+		"**/node_modules": true,
+		"**/package-lock.json": true
+	}
+}

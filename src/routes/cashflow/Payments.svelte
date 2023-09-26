@@ -1,8 +1,9 @@
 <script lang="ts">
-	import Button from "./Button.svelte";
-	import { Plus, Check } from "lucide-svelte";
-	import NameInput from "./NameInput.svelte";
+	import { Check,Plus } from "lucide-svelte";
+
 	import AmountInput from "./AmountInput.svelte";
+	import Button from "./Button.svelte";
+	import NameInput from "./NameInput.svelte";
 
 	interface Payment {
 		name: string;
