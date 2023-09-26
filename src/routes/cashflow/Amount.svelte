@@ -13,10 +13,15 @@
 	{/if}
 
 	<div
-		class="flex items-center overflow-hidden rounded-xl bg-white pl-3 text-black"
+		class="flex items-center overflow-hidden rounded-lg bg-white pl-3 ring-1 ring-gray-950/10"
 	>
 		<PoundSterling />
 
-		<input type="number" placeholder="10" bind:value class="w-full p-3" />
+		<input
+			type="number"
+			placeholder="10"
+			bind:value
+			class="w-full p-3 focus:outline-none"
+		/>
 	</div>
 </div>

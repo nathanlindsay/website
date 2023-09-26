@@ -1,14 +1,10 @@
 <script lang="ts">
 	import { Check, Plus } from "lucide-svelte";
 
-	import AmountInput from "./AmountInput.svelte";
+	import Amount from "./Amount.svelte";
 	import Button from "./Button.svelte";
-	import NameInput from "./NameInput.svelte";
-
-	interface Payment {
-		name: string;
-		amount: number;
-	}
+	import Name from "./Name.svelte";
+	import type { Payment } from "./types";
 
 	export let heading: string;
 	export let payments: Payment[] = [];
@@ -36,9 +32,9 @@
 	<ul class="space-y-1">
 		{#each payments as payment, i}
 			<li class="flex items-center gap-1">
-				<NameInput bind:value={payment.name} />
+				<Name bind:value={payment.name} />
 
-				<AmountInput bind:value={payment.amount} />
+				<Amount bind:value={payment.amount} />
 
 				<Button on:click={() => removePayment(i)}>
 					<Check />

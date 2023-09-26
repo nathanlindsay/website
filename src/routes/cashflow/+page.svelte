@@ -1,32 +1,21 @@
 <script lang="ts">
-	import AmountInput from "./AmountInput.svelte";
+	import Amount from "./Amount.svelte";
 	import Payments from "./Payments.svelte";
+	import type { Payment } from "./types";
 
-	// Current balance
 	let currentBalance = parseInt(localStorage.getItem("currentBalance") || "0");
-	$: localStorage.setItem("currentBalance", currentBalance?.toString() || "0");
+	let owed = JSON.parse(localStorage.getItem("owed") || "[]") as Payment[];
+	let owe = JSON.parse(localStorage.getItem("owe") || "[]") as Payment[];
 
-	// Owed
-	let owed = JSON.parse(localStorage.getItem("owed") || "[]");
-	$: localStorage.setItem("owed", JSON.stringify(owed));
-
-	// Owe
-	let owe = JSON.parse(localStorage.getItem("owe") || "[]");
-	$: localStorage.setItem("owe", JSON.stringify(owe));
-
-	// Actual balance
-	let actualBalance = currentBalance;
+	$: actualBalance =
+		currentBalance +
+		owed.reduce((acc, payment) => acc + payment.amount, 0) -
+		owe.reduce((acc, payment) => acc + payment.amount, 0);
 
 	$: {
-		actualBalance = currentBalance;
-
-		for (const payment of owed) {
-			actualBalance += parseInt(payment.amount);
-		}
-
-		for (const payment of owe) {
-			actualBalance -= parseInt(payment.amount);
-		}
+		localStorage.setItem("currentBalance", currentBalance?.toString() || "0");
+		localStorage.setItem("owed", JSON.stringify(owed));
+		localStorage.setItem("owe", JSON.stringify(owe));
 	}
 </script>
 
@@ -42,7 +31,7 @@
 	£{actualBalance}
 </p>
 
-<AmountInput label="Current Balance" bind:value={currentBalance} />
+<Amount label="Current Balance" bind:value={currentBalance} />
 
 <Payments heading="Owed" bind:payments={owed} />
 

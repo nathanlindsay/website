@@ -1,5 +1,5 @@
 <script lang="ts">
-	import LI from "./LI.svelte";
+	import Job from "./Job.svelte";
 </script>
 
 <svelte:head>
@@ -24,33 +24,33 @@
 		<h2 class="font-semibold">Work</h2>
 
 		<ul class="space-y-3">
-			<LI jobTitle="Software Engineer" when="January 2020 - Now">
+			<Job title="Software Engineer" when="January 2020 - Now">
 				I build internal tools for small businesses to help them run more
 				efficiently and with less room for human error.
-			</LI>
+			</Job>
 
-			<LI jobTitle="Physical Security Engineer" when="March 2022 - Now">
+			<Job title="Physical Security Engineer" when="March 2022 - Now">
 				I help big customers install, provision and maintain physical digital
 				security systems. I also write scripts to automate the boring stuff.
-			</LI>
+			</Job>
 
-			<LI
-				jobTitle="Consulting Technical Manager"
+			<Job
+				title="Consulting Technical Manager"
 				where="Zero 7"
 				when="January 2020 - February 2022"
 			>
 				I ran Zero 7's technical operations for a couple of years. I was in charge
 				of everything from internal IT to customer operations.
-			</LI>
+			</Job>
 
-			<LI
-				jobTitle="Financial Crime Specialist"
+			<Job
+				title="Financial Crime Specialist"
 				where="Monzo"
 				when="January 2019 - December 2019"
 			>
 				I reviewed bank transactions and IDs for anything suspicious and wrote
 				reports for UK law enforcement agencies.
-			</LI>
+			</Job>
 		</ul>
 	</section>
 </main>
