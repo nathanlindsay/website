@@ -6,5 +6,5 @@
 	type="text"
 	placeholder="Name"
 	bind:value
-	class="w-full rounded-xl bg-white p-3 text-black"
+	class="w-full rounded-lg bg-white p-3 ring-1 ring-gray-950/10 focus:outline-none"
 />
